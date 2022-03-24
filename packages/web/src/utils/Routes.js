@@ -26,6 +26,8 @@ import EditProfilePage from "../pages/EditUser/EditProfilePage/EditProfilePage";
 import AddressMain from "../pages/EditUser/Address/AddressMain";
 import DeliveryPage from "../pages/Delivery/DeliveryPage";
 import EditUser from "../pages/EditUser/EditUser";
+import Create from "../pages/admin/create/Create"
+import Update from "../pages/admin/update/Update";
 
 const LayoutsWithNavbar = () => (
   <>
@@ -60,6 +62,12 @@ const AllRoutes = () => {
               <Wishlist />
             </ProtectedRoute>
           }
+        />
+        <Route path="/admin/create"
+          element={<Create />}
+        />
+        <Route path="/admin/update"
+          element={<Update />}
         />
         <Route
           path="/orders/:order_id"

@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    role:{
+      type: Number,
+      default: 0
+    },
     mobile_verified: {
       type: Boolean,
       default: false,
