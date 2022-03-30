@@ -5,6 +5,7 @@ import SubGroup from "../models/SubGroup.js";
 import Group from "../models/Group"
 import Product from "../models/Product"
 
+
 export const createCategory = (req, res) => {
     const category = new Category(req.body);
     category.save((err, data) => {

@@ -15,6 +15,7 @@ import { MONGODB_URI, ORIGIN, PORT } from "./constants.js";
 import wishlistRouter from "./routes/wishlistRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import delRouter from "./routes/deliveryRoutes.js";
+import adminRoutes from "./routes/adminroutes.js"
 
 const mongooseOptions = {
   autoIndex: false,
@@ -52,6 +53,7 @@ app.get("/", (_, res) => {
 });
 
 app.use("/api", cors(corsOptions), SubGroupRouter);
+app.use("/api", cors(corsOptions), adminRoutes);
 app.use("/api", cors(corsOptions), GroupRouter);
 app.use("/api", cors(corsOptions), CategoryRouter);
 app.use("/api", cors(corsOptions), ProductRouter);
