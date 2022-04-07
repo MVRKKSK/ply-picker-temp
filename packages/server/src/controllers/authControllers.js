@@ -187,7 +187,6 @@ export const login = async (req, res) => {
       error: "Invalid password.",
     });
   }
-
   setCookies(res, user);
   return res.status(200).json({
     user: user,

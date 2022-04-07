@@ -16,6 +16,8 @@ import wishlistRouter from "./routes/wishlistRoutes.js";
 import orderRouter from "./routes/orderRoutes.js";
 import delRouter from "./routes/deliveryRoutes.js";
 import adminRoutes from "./routes/adminroutes.js"
+import adminAccess from "./routes/AdminAccess.js"
+import morgan from "morgan"
 
 const mongooseOptions = {
   autoIndex: false,
@@ -45,6 +47,7 @@ const corsOptions = {
   credentials: true,
 };
 
+app.use(morgan("dev"))
 app.use(express.json());
 app.use(cookieParser());
 
@@ -65,6 +68,10 @@ app.use("/api/auth", cors(corsOptions), authRoutes);
 app.use("/api/wishlist", cors(corsOptions), wishlistRouter);
 app.use("/api/orders", cors(corsOptions), orderRouter);
 app.use("/api/delivery/orders", cors(corsOptions), delRouter);
+
+/* admin routes */
+
+app.use("/api/adminAccess" , adminAccess)
 
 console.log(`Listening on port ${PORT}`);
 

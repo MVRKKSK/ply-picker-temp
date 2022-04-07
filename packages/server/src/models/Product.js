@@ -130,6 +130,10 @@ const ProductSchema = new mongoose.Schema(
             default: [],
             required: true,
         },
+        PlyPicker:{
+            type: Boolean,
+            default: false
+        },
     },
     { timestamps: true }
 );
